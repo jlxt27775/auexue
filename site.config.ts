@@ -1,10 +1,10 @@
 import { defineSiteConfig } from 'valaxy'
 
 export default defineSiteConfig({
-  url: 'https://your.site',
+  url: 'https://bk.wpzyz.ggff.net',
   lang: 'zh-CN',
   title: 'AIOVTUE',
-  subtitle: '雪',
+  subtitle: '全网热门资源库',
   author: {
     name: 'AIOVTUE',
     avatar: 'https://r2tc.20030327.xyz/file/博客/主题/1780655293662_avatar_me.jpg.PNG',   //站点头像
@@ -81,17 +81,17 @@ export default defineSiteConfig({
 
   sponsor: {
     enable: true,
-    title: '我很可爱，请给我钱！',
+    title: '更多资源，进群获取',
     methods: [
       {
-        name: '支付宝',
-        url: 'https://i.postimg.cc/fyYTncnJ/IMG-20240915-155521.jpg',
+        name: 'QQ群',
+        url: '点击链接加入群聊【夸克网盘资源分享3群】：https://qm.qq.com/q/nGuIHUEMUg',
         color: '#00A3EE',
         icon: 'i-ri-alipay-line',
       },
       {
-        name: '微信支付',
-        url: 'https://i.postimg.cc/26s8KHts/IMG-20240915-155547.png',
+        name: '夸克群',
+        url: '点击链接即可加入「夸克网盘资源分享」夸克网盘群 https://pan.quark.cn/g/4f8c395a9e',
         color: '#2DC100',
         icon: 'i-ri-wechat-pay-line',
       },
