@@ -8,15 +8,15 @@ linkGroups:
   - name: 紧密相连
     desc: 下面都是 AIOVTUE-雪 自己的网站哦，还有，建议这里只放八个哦~
     links:
-      - url: https://daily.yybb.us/
+      - url: https://bk.wpzyz.ggff.net/
         avatar: https://r2tc.20030327.xyz/file/博客/主题/1780655293662_avatar_me.jpg.PNG
-        name: AIOVTUE-雪
+        name: 全网热门资源库
         blog: AIOVTUE-雪
         desc: 这和本站是一样的架构哦~
         color: "#0078e7"
         siteshot: https://r2tc.20030327.xyz/file/博客/友链/1782106866919_1780909850378_1780909790262.jpg
      
-      - url: https://yybb.us
+      - url: https://bk.wpzyz.ggff.net
         avatar: https://r2tc.20030327.xyz/file/博客/主题/1780655293662_avatar_me.jpg.PNG
         name: AIOVTUE's blog
         blog: AIOVTUE's blog
@@ -24,7 +24,7 @@ linkGroups:
         color: "#0078e7"
         siteshot: https://r2tc.20030327.xyz/file/博客/友链/1782106889251_1782106583220.jpg
      
-      - url: https://bk.yybb.us
+      - url: https://bk.wpzyz.ggff.net
         avatar: https://r2tc.20030327.xyz/file/博客/主题/1780655293662_avatar_me.jpg.PNG
         name: aiovtue'rin blog
         blog: aiovtue'rin blog
