@@ -85,13 +85,13 @@ export default defineSiteConfig({
     methods: [
       {
         name: 'QQ群',
-        url: '点击链接加入群聊【夸克网盘资源分享3群】：https://qm.qq.com/q/nGuIHUEMUg',
+        url: 'https://github.com/jlxt27775/picx-images-hosting/raw/master/qrcode_1783229720241.5mohl7z9a3.webp',
         color: '#00A3EE',
         icon: 'i-ri-alipay-line',
       },
       {
         name: '夸克群',
-        url: '点击链接即可加入「夸克网盘资源分享」夸克网盘群 https://pan.quark.cn/g/4f8c395a9e',
+        url: 'https://github.com/jlxt27775/picx-images-hosting/raw/master/QQ20260705-133614.32in8l09qo.webp',
         color: '#2DC100',
         icon: 'i-ri-wechat-pay-line',
       },
