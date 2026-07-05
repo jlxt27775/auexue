@@ -105,8 +105,8 @@ export default defineValaxyConfig({
         {
           label: '--- 主域名 ---',
           lines: [
-            'daily.yybb.us',
-            'daily.20030327.xyz',
+            'bk.wpzyz.ggff.net',
+            'www.wpzyz.top',
             // 也支持对象：{ text: '显示文字', url: 'https://example.com' }
           ],
         },
@@ -162,7 +162,7 @@ export default defineValaxyConfig({
     
     hero: {
       title: 'AIOVTUE',   //首页中间的文字
-      motto: '雨是神的烟花',
+      motto: '每日实时更新当下最具讨论度的热门作品，覆盖电影、电视剧、综艺及动漫等领域，致力于成为你高效追更的一站式资讯站。',
       urls: [
       '/hero/tt3.png', 
       '/hero/hero-1.jpg',
@@ -202,8 +202,8 @@ export default defineValaxyConfig({
   
     navbar: [...mainNavItems],
     navbarOptions: {
-      title: ['AIOVTUE-', '雪'],   //顶栏和侧边栏文字
-      subTitle: '雨是神的烟花',
+      title: ['AIOVTUE-', '全网热门资源库'],   //顶栏和侧边栏文字
+      subTitle: '每日实时更新当下最具讨论度的热门作品，覆盖电影、电视剧、综艺及动漫等领域，致力于成为你高效追更的一站式资讯站。',
       offset: 0,
       invert: ['home'],
       showMarker: false,
