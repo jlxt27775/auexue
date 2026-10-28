@@ -73,6 +73,11 @@ const socialIconSafelist = [
 export const iconSafelist = [
   ...collectNavIcons(mainNavItems),
   ...socialIconSafelist,
+  // sponsor 弹层里的图标（site.config.ts → sponsor.methods[].icon）
+  'i-ri-qq-line',
+  'i-ri-cloud-line',
+  'i-ri-alipay-line',
+  'i-ri-wechat-pay-line',
   'i-fa6-solid-quote-left',
   'i-fa6-solid-quote-right',
   'i-ri-menu-4-fill',
