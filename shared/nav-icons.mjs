@@ -37,7 +37,6 @@ export const mainNavItems = [
     icon: 'i-ant-design:team-outlined',
     link: '/links',
     items: [
-      { text: '导航', icon: 'i-ant-design:compass-filled', link: '/navigation' },
       { text: '留言', icon: 'i-ant-design:message-filled', link: '/comment' },
       { text: '友链', icon: 'i-ant-design:global-outlined', link: '/links' },
     ],

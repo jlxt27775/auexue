@@ -187,6 +187,14 @@ export async function getPostBySlug(
   }
 }
 
+/**
+ * LIKE 通配符转义：% _ \ 三个字符必须转义，否则用户输入
+ * 会被当成通配符（搜 "%" 会命中全部文章）。
+ */
+function escapeLike(input: string) {
+  return input.replace(/[\\%_]/g, ch => `\\${ch}`)
+}
+
 export async function searchPosts(
   env: CloudflareEnv,
   keyword: string,
@@ -196,13 +204,25 @@ export async function searchPosts(
   if (!q)
     return []
 
+  // 用 LIKE 取代 FTS5 MATCH，原因：
+  // 1) posts_fts 的 tokenizer 是 unicode61，中文按整段切成一个 token，
+  //    导致「狐妖」搜不到「狐妖小红娘」，只能整词精确输入；
+  // 2) MATCH 语法要求输入转义，含 " * - 的查询会直接 500。
+  // 数据量在千篇以内时 LIKE 全表扫描足够快。
+  const pattern = `%${escapeLike(q)}%`
   const { results } = await env.DB.prepare(`
-    SELECT p.* FROM posts_fts f
-    JOIN posts p ON p.slug = f.slug
-    WHERE posts_fts MATCH ? AND p.published = 1
-    ORDER BY rank
+    SELECT p.* FROM posts p
+    LEFT JOIN posts_fts f ON f.slug = p.slug
+    WHERE p.published = 1
+      AND (
+        p.title LIKE ? ESCAPE '\\'
+        OR p.excerpt LIKE ? ESCAPE '\\'
+        OR f.title LIKE ? ESCAPE '\\'
+        OR f.content LIKE ? ESCAPE '\\'
+      )
+    ORDER BY p.pin_order DESC, p.date DESC
     LIMIT ?
-  `).bind(q, limit).all<PostRecord>()
+  `).bind(pattern, pattern, pattern, pattern, limit).all<PostRecord>()
 
   return sortPosts((results || []).map(recordToListItem))
 }

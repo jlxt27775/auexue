@@ -1,14 +1,9 @@
 <script setup lang="ts">
-import { useSiteConfig } from 'valaxy'
 import { computed } from 'vue'
 
-const props = withDefaults(defineProps<{
+defineProps<{
   siteshot?: string
-}>(), {
-  siteshot: 'https://r2tc.20030327.xyz/file/博客/主题/1780643226230_wallhaven-9d1yjk.png',
-})
-
-const siteConfig = useSiteConfig()
+}>()
 
 const ymlTemplate = `- name: #站点名称
   link: #站点链接
@@ -17,17 +12,6 @@ const ymlTemplate = `- name: #站点名称
   siteshot: #站点截图`
 
 const ymlLines = computed(() => ymlTemplate.split('\n'))
-
-const siteInfo = computed(() => {
-  const url = siteConfig.value.url || ''
-  return {
-    name: `${siteConfig.value.title || 'AIOVTUE'}'s blog`,
-    url: url.endsWith('/') ? url : `${url}/`,
-    avatar: siteConfig.value.author?.avatar || '',
-    desc: siteConfig.value.description || '',
-    siteshot: props.siteshot,
-  }
-})
 
 const rules = [
   { icon: '🎉', text: '本站支持交换友链，在您提出申请之前，请将本站添加到友链' },
@@ -101,30 +85,6 @@ async function copyYml() {
           <span>{{ rule.text }}</span>
         </li>
       </ul>
-
-      <div class="friend-link-site-info">
-        <p class="friend-link-site-info__title">
-          <span aria-hidden="true">📍</span>
-          本站友链信息如下：
-        </p>
-        <ul class="friend-link-site-info__list">
-          <li>
-            站点名称：<span class="friend-link-highlight">AIOVTUE-雪</span>
-          </li>
-          <li>
-            站点链接：<span class="friend-link-highlight">https://live.yybb.us</span>
-          </li>
-          <li>
-            站长头像：<span class="friend-link-highlight">{{ siteInfo.avatar }}</span>
-          </li>
-          <li>
-            站点描述：<span class="friend-link-highlight">雨滴会记录生命中的每一个瞬间</span>
-          </li>
-          <li>
-            站点截图：<span class="friend-link-highlight">https://r2tc.20030327.xyz/file/博客/主题/1780909850378_1780909790262.png</span>
-          </li>
-        </ul>
-      </div>
     </div>
   </section>
 </template>
@@ -339,58 +299,6 @@ async function copyYml() {
 
 .friend-link-rules__icon {
   flex-shrink: 0;
-}
-
-.friend-link-site-info {
-  margin-top: 12px;
-  padding-top: 12px;
-  border-top: 1px dashed oklch(0% 0 0 / 10%);
-
-  @at-root html.dark & {
-    border-top-color: oklch(100% 0 0 / 14%);
-  }
-}
-
-.friend-link-site-info__title {
-  margin: 0 0 10px;
-  font-size: 0.84rem;
-  font-weight: 600;
-  color: #3a3a42;
-
-  @at-root html.dark & {
-    color: #f0f0f4;
-  }
-}
-
-.friend-link-site-info__list {
-  margin: 0;
-  padding-left: 1.1em;
-  list-style: circle;
-}
-
-.friend-link-site-info__list li {
-  margin-bottom: 8px;
-  font-size: 0.8rem;
-  line-height: 1.6;
-  color: #4a4a52;
-  word-break: break-all;
-
-  @at-root html.dark & {
-    color: #d8d8e0;
-  }
-}
-
-.friend-link-highlight {
-  display: inline;
-  padding: 1px 6px;
-  border-radius: 4px;
-  background: oklch(92% 0.04 350);
-  color: #3a3a42;
-
-  @at-root html.dark & {
-    background: oklch(38% 0.06 350);
-    color: #ffe8f0;
-  }
 }
 
 </style>

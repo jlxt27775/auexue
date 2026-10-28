@@ -13,6 +13,15 @@ export async function fetchPostList(params: Record<string, string | number | und
   return response.json() as Promise<{ posts: PostListItem[], total: number, page: number, pageSize: number }>
 }
 
+/** 服务端全文搜索（覆盖文章正文），供搜索页调用 */
+export async function searchPostList(keyword: string, limit = 20) {
+  const query = new URLSearchParams({ q: keyword, limit: String(limit) })
+  const response = await fetch(`/api/posts/search?${query}`, { cache: 'no-store' })
+  if (!response.ok)
+    throw new Error(`搜索失败 (${response.status})`)
+  return response.json() as Promise<{ posts: PostListItem[] }>
+}
+
 export async function fetchFilteredPosts(params: {
   category?: string
   tag?: string
