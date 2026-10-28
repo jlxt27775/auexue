@@ -82,6 +82,7 @@ export default defineSiteConfig({
   sponsor: {
     enable: true,
     title: '更多资源，进群获取',
+    description: '更多资源进群获取',
     methods: [
       {
         name: 'QQ群',

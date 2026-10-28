@@ -419,4 +419,29 @@ html.image-gallery-open {
   gap: 1rem;
 }
 
+/* ===== 赞助/进群二维码（SakuraSponsor）修复 =====
+   主题默认：.sponsor-method-img 写死 aspect-ratio: 1 + object-fit: fill，
+   竖版群海报会被压成正方形；.qrcode-container.show 又写死 height: 260px + overflow: hidden，
+   内容一高就被裁掉。这里改为按原图比例显示、容器随内容自适应。 */
+.qrcode-container.show {
+  height: auto !important;
+  overflow: visible;
+}
+
+.qrcode-container .sponsor-method-img {
+  width: auto !important;
+  height: 12rem !important;
+  max-width: none !important;
+  aspect-ratio: auto !important;
+  object-fit: contain !important;
+  background-color: #fff;
+  border-radius: 8px;
+}
+
+/* 两张图之间留出间距，窄屏时换行而不是挤压 */
+.qrcode-container > .flex.justify-around {
+  flex-wrap: wrap;
+  gap: 0.75rem 1.5rem;
+}
+
 
